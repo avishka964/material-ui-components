@@ -8,7 +8,7 @@ import {
   Avatar,
 } from '@material-ui/core';
 import { alpha, makeStyles } from '@material-ui/core/styles';
-import { Notifications, Mail, Search, Close } from '@material-ui/icons';
+import { Notifications, Mail, Search} from '@material-ui/icons';
 import Profile from '../assets/avatar.jpg';
 
 const useStyles = makeStyles((theme) => ({
@@ -76,7 +76,7 @@ const NavBar = () => {
   const classes = useStyles({ open });
 
   return (
-    <AppBar position='static'>
+    <AppBar>
       <Toolbar className={classes.toolbar}>
         <Typography variant='h6' className={classes.sloganLg}>
           Material-UI
@@ -86,10 +86,10 @@ const NavBar = () => {
         </Typography>
         <div className={classes.search}>
           <div className={classes.searchIcon}>
-            <Search />
+            <Search onClick={()=> setOpen(false)}/>
           </div>
           <InputBase placeholder='Search…' className={classes.inputBase} />
-            <Close className={classes.cancel} onClick={()=> setOpen(false)}/>
+            {/* <Close className={classes.cancel} onClick={()=> setOpen(false)}/> */}
         </div>
         <div className={classes.icons}>
           <Search
